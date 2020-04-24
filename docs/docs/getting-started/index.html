@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.68.3" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="https://mantielero.github.io/nim4science/docs/getting-started/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/nim4science/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/nim4science/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/nim4science/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/nim4science/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/nim4science/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/nim4science/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/nim4science/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/nim4science/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/nim4science/favicons/android-192x192.png" sizes="192x192">
+
+<title>Getting Started | nim4science</title><meta property="og:title" content="Getting Started" />
+<meta property="og:description" content="Installation and basic use
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://mantielero.github.io/nim4science/docs/getting-started/" />
+<meta property="og:site_name" content="nim4science" />
+<meta itemprop="name" content="Getting Started">
+<meta itemprop="description" content="Installation and basic use
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting Started"/>
+<meta name="twitter:description" content="Installation and basic use
+"/>
+
+
+
+
+
+<link rel="preload" href="/nim4science/scss/main.min.bb1ca766e41a0e946ad64cf4afe1ef9cda4b8f5ac09cb29881652bb359f0df3c.css" as="style">
+<link href="/nim4science/scss/main.min.bb1ca766e41a0e946ad64cf4afe1ef9cda4b8f5ac09cb29881652bb359f0df3c.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/nim4science/">
+		<span class="navbar-logo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1e3 1e3" enable-background="new 0 0 1000 1000"><g><g transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)"><path d="M4664 4984.6c-465-133.8-908.1-576.9-1230.6-1237.2-105.3-212.8-105.3-241.3-2.2-243.5 21.9.0 164.5-30.7 315.9-65.8 151.4-37.3 278.6-63.6 280.8-61.4 4.4 4.4 32.9 61.4 65.8 127.2 315.9 638.3 759 941 1118.7 767.7 210.6-103.1 484.8-410.2 669-752.4 68-125 103.1-168.9 129.4-162.3 19.7 4.4 171.1 41.7 337.8 83.4 164.5 39.5 300.5 81.2 300.5 89.9.0 43.9-204 421.2-326.8 603.2-261 390.4-583.5 677.8-905.9 811.6-116.3 48.3-177.7 59.2-390.4 63.6C4854.8 5013.1 4738.6 5006.5 4664 4984.6z"/><path d="M1878.2 3229.7c-267.6-43.9-405.8-85.5-620.8-188.6-375.1-179.9-629.6-515.5-688.8-903.7-65.8-432.1 111.9-1013.4 484.8-1590.3L1169.7 365l157.9 171.1c87.7 94.3 197.4 215 243.5 267.6l85.5 94.3-48.3 81.2c-190.8 304.9-355.4 750.2-355.4 954.2.0 390.5 337.8 594.5 1020 620.8 254.4 8.8 677.8-15.4 704.1-43.9 4.4-2.2-17.6-109.7-46.1-236.9-46.1-193-164.5-831.3-164.5-877.4.0-8.8-120.6-111.9-267.6-230.3C2159 891.4 1597.4 336.5 1369.3 46.9 452.4-1113.5 303.2-2105 954.7-2695c340-309.3 919.1-451.9 1618.8-401.4 147 11 267.6 21.9 269.8 26.3 2.2 2.2-46.1 153.5-105.3 337.8l-107.5 331.2h-309.3c-848.9.0-1175.7 278.6-1033.2 881.8 57 243.5 265.4 649.3 495.7 958.6l85.5 118.4 201.8-190.8c111.9-103.1 311.5-278.6 447.5-386.1 243.5-197.4 245.7-199.6 258.8-311.5 32.9-245.7 149.2-796.3 230.3-1083.6C3361-3662.4 3973-4533.2 4653-4746c177.7-54.8 480.4-59.2 666.8-8.8 533 142.6 1015.6 682.2 1364.4 1517.9 72.4 175.5 89.9 201.8 127.2 193 309.3-68 1022.2-79 1340.3-21.9 247.9 43.9 522.1 138.2 686.6 232.5 188.7 111.9 381.7 315.9 473.8 506.7C9617-1710.1 9397.7-940.2 8654.1-5.7c-206.2 258.8-798.5 844.5-1127.5 1116.5-151.3 125-280.8 247.9-289.5 274.2-8.8 24.1-37.3 175.5-61.4 331.2-24.1 157.9-68 392.6-98.7 524.3-28.5 131.6-48.3 245.7-43.9 254.5 21.9 35.1 526.4 72.4 787.5 59.2 401.4-19.7 618.6-94.3 778.7-267.6 107.5-116.3 142.6-236.9 127.2-429.9-19.8-228.1-160.1-587.9-346.6-877.4l-63.6-100.9 92.1-96.5c52.6-52.6 162.3-168.9 245.7-256.6 83.3-87.7 157.9-151.4 166.7-142.6 59.2 61.4 261 403.6 351 587.9 247.9 513.3 315.9 916.9 219.4 1296.4-54.8 217.2-149.2 375.1-322.5 546.2-298.3 298.3-763.3 449.7-1388.5 449.7-682.2.0-1550.8-188.7-2489.7-541.8l-175.5-68-274.2 109.7C4236.3 2960 3703.2 3109.1 3179 3199 2821.4 3258.3 2159 3275.8 1878.2 3229.7zm2051-930 186.5-59.2-98.7-52.6c-54.8-26.3-171.1-94.3-258.8-147-89.9-54.8-166.7-94.3-171.1-87.7-4.4 4.4 13.2 98.7 39.5 210.6 35.1 144.8 57 199.6 83.3 199.6C3727.4 2361.1 3826.1 2334.8 3929.2 2299.7zM6388.1 2154.9c26.3-116.3 43.9-212.8 39.5-217.2s-125 59.2-267.6 142.6l-261 149.2 195.2 57c168.9 50.4 225.9 68 241.3 74.6C6337.7 2363.3 6359.6 2269 6388.1 2154.9zM5409.8 1687.7c390.4-201.8 701.9-388.3 991.5-594.4l171.1-122.8 17.5-175.5c19.7-201.8 2.2-1401.7-21.9-1539.9-15.4-79-35.1-105.3-138.2-177.7-182.1-131.6-519.9-340-783.1-487-217.1-120.6-230.3-131.6-179.8-151.4 289.5-111.9 480.4-182.1 633.9-230.3 164.5-52.6 186.4-54.8 232.5-24.1s50.5 28.5 57.1-15.4c6.6-54.8 83.3-79 449.7-147l223.8-39.5 21.9 100.9c13.2 54.8 46.1 232.5 72.4 394.8l50.4 293.9 153.5 122.8c225.9 179.9 465 386.1 616.4 533L8110-444.4 8268-657.2c296.1-405.8 469.4-798.5 471.6-1074.8 2.2-348.8-190.8-535.2-653.7-631.7-230.3-48.3-750.2-48.3-1074.8.0-1046.3 153.6-2259.4 647.1-3305.7 1342.5-278.6 184.2-278.6 186.4-296.1 287.3-21.9 136-21.9 1399.5.0 1588.1l17.6 147 267.6 173.3c147 96.5 364.1 230.3 484.8 300.5 247.9 144.8 776.5 403.6 824.8 403.6C5021.5 1878.5 5205.8 1793 5409.8 1687.7zM2674.4-69.4l-6.6-153.5L2503.4-71.5 2338.8 82 2503.4 240l164.5 160.1 6.6-157.9C2678.8 154.4 2678.8 14 2674.4-69.4zM7577 11.8c-32.9-37.3-107.5-105.3-164.5-153.5l-105.3-87.8V71v300.5l164.5-149.2 166.7-147L7577 11.8zM3694.4-1843.9c50.5-35.1 153.5-96.5 230.3-138.2 74.6-39.5 136-79 136-85.5.0-17.5-370.7-118.5-386.1-105.3-13.2 15.3-96.5 322.4-96.5 364.1C3578.2-1771.5 3591.4-1775.9 3694.4-1843.9zM5245.3-2607.3c138.2-54.8 379.5-138.2 537.4-186.5 155.8-48.2 285.2-89.9 287.4-92.1 4.4-2.2-52.6-125-122.9-272-155.7-324.6-313.7-559.3-484.8-717.3-392.7-364.1-750.2-278.6-1164.8 278.6-125 171.1-399.2 682.2-383.9 723.9 2.2 11 118.5 54.8 254.5 94.3 136 41.7 361.9 118.5 504.5 173.3 140.4 52.6 269.8 96.5 287.4 96.5C4977.7-2506.4 5107.1-2552.5 5245.3-2607.3z"/><path d="M4771.5 781.7c-111.9-32.9-274.2-157.9-353.2-269.8-144.8-210.6-164.5-476-52.6-704.1 125-250.1 346.6-388.3 627.4-388.3 267.6.0 487 127.2 616.4 359.7 59.2 107.5 63.6 133.8 63.6 335.6.0 188.7-6.6 232.5-50.4 315.9-76.8 140.4-228.1 278.6-368.5 329C5126.8 808.1 4898.7 819 4771.5 781.7z"/></g></g></svg></span><span class="text-uppercase font-weight-bold">nim4science</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/nim4science/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/nim4science/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/nim4science/blog/" ><span>Blog</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/nim4science/community/" ><span>Community</span></a>
+			</li>
+			
+			
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 Search this site…" aria-label="Search this site…" autocomplete="off">
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/nim4science/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="nim4sciencedocs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/nim4science/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Overview</a>
+  </li>
+  <ul>
+    <li class="collapse " id="nim4sciencedocsoverview">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/nim4science/docs/why-nim/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Why Nim?</a>
+  </li>
+  <ul>
+    <li class="collapse " id="nim4sciencedocswhy-nim">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/nim4science/docs/getting-started/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Getting Started</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="nim4sciencedocsgetting-started">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocsgetting-startedinstallation" href="/nim4science/docs/getting-started/installation/">Installation</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocsgetting-startedintro" href="/nim4science/docs/getting-started/intro/">Introduction</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocsgetting-startedslicing" href="/nim4science/docs/getting-started/slicing/">Slicing</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocsgetting-startedfunctions" href="/nim4science/docs/getting-started/functions/">Functions</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/nim4science/docs/libraries/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Libraries</a>
+  </li>
+  <ul>
+    <li class="collapse " id="nim4sciencedocslibraries">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesalgebra" href="/nim4science/docs/libraries/algebra/">Algebra</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesimage" href="/nim4science/docs/libraries/image/">Image</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesplotting" href="/nim4science/docs/libraries/plotting/">Plotting</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesdataframe" href="/nim4science/docs/libraries/dataframe/">Dataframe</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesserialization" href="/nim4science/docs/libraries/serialization/">Serialization</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesgeospatial" href="/nim4science/docs/libraries/geospatial/">Geospatial</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesrandom" href="/nim4science/docs/libraries/random/">Random</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesbindings" href="/nim4science/docs/libraries/bindings/">Bindings</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesdeep_learning" href="/nim4science/docs/libraries/deep_learning/">Deep Learning</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesgeometry" href="/nim4science/docs/libraries/geometry/">Geometry</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrarieslinear" href="/nim4science/docs/libraries/linear/">Linear</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesmachine_learning" href="/nim4science/docs/libraries/machine_learning/">Machine Learning</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesnlp" href="/nim4science/docs/libraries/nlp/">NLP</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesnonlinear" href="/nim4science/docs/libraries/nonlinear/">Non-Linear Solver</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesother" href="/nim4science/docs/libraries/other/">Other</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesphysics" href="/nim4science/docs/libraries/physics/">Physics</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariessimulation" href="/nim4science/docs/libraries/simulation/">Simulation</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocslibrariesstats" href="/nim4science/docs/libraries/stats/">Statistics</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/nim4science/docs/todo/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">TODO</a>
+  </li>
+  <ul>
+    <li class="collapse " id="nim4sciencedocstodo">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/nim4science/docs/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tutorials</a>
+  </li>
+  <ul>
+    <li class="collapse " id="nim4sciencedocstutorials">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/nim4science/docs/reference/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Reference</a>
+  </li>
+  <ul>
+    <li class="collapse " id="nim4sciencedocsreference">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-nim4sciencedocsreferenceparameter-reference" href="/nim4science/docs/reference/parameter-reference/">Parameter Reference</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+<a href="https://github.com/google/docsy-example/edit/master/content/en/docs/Getting%20started/_index.md" target="_blank"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/google/docsy-example/issues/new?title=Getting%20Started" target="_blank"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+
+
+<a href="https://github.com/mantielero/nim4science/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
+
+</div>
+
+
+
+
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://mantielero.github.io/nim4science/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://mantielero.github.io/nim4science/docs/getting-started/">Getting Started</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Getting Started</h1>
+        <div class="lead">Installation and basic use</div>
+	
+	<p>In this section, we will see how to install everyhting you need and review how to make a basic use of the library.</p>
+<p>This is based on <a href="https://github.com/nim-lang/needed-libraries/issues/77">Meta - Are we scientists yet?</a>
+<a href="https://forum.nim-lang.org/t/5242">Proposal to start a Nim-Scientific Community</a></p>
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/nim4science/docs/getting-started/installation/">Installation</a>
+                    </h5>
+                    <p>This steps are needed to make this work.</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/nim4science/docs/getting-started/intro/">Introduction</a>
+                    </h5>
+                    <p>This provides some flavor about how to use it.</p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/nim4science/docs/getting-started/slicing/">Slicing and other syntactic suger</a>
+                    </h5>
+                    <p>This page describes some syntactic sugar pretty similar to the one provided in Python.</p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/nim4science/docs/getting-started/functions/">VapourSynth functions</a>
+                    </h5>
+                    <p>Here you will found out about how to use VapourSynth functions</p>
+                </div>
+            
+        
+    
+</div>
+
+	
+		<style>
+  .feedback--answer {
+    display: inline-block;
+  }
+  .feedback--answer-no {
+    margin-left: 1em;
+  }
+  .feedback--response {
+    display: none;
+    margin-top: 1em;
+  }
+  .feedback--response__visible {
+    display: block;
+  }
+</style>
+<h2 class="feedback--title">Feedback</h2>
+<p class="feedback--question">Was this page helpful?</p>
+<button class="feedback--answer feedback--answer-yes">Yes</button>
+<button class="feedback--answer feedback--answer-no">No</button>
+<p class="feedback--response feedback--response-yes">
+  Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.
+</p>
+<p class="feedback--response feedback--response-no">
+  Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.
+</p>
+<script>
+  const yesButton = document.querySelector('.feedback--answer-yes');
+  const noButton = document.querySelector('.feedback--answer-no');
+  const yesResponse = document.querySelector('.feedback--response-yes');
+  const noResponse = document.querySelector('.feedback--response-no');
+  const disableButtons = () => {
+    yesButton.disabled = true;
+    noButton.disabled = true;
+  };
+  const sendFeedback = (value) => {
+    if (typeof ga !== 'function') return;
+    const args = {
+      command: 'send',
+      hitType: 'event',
+      category: 'Helpful',
+      action: 'click',
+      label: window.location.pathname,
+      value: value
+    };
+    ga(args.command, args.hitType, args.category, args.action, args.label, args.value);
+  };
+  yesButton.addEventListener('click', () => {
+    yesResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(1);
+  });
+  noButton.addEventListener('click', () => {
+    noResponse.classList.add('feedback--response__visible');
+    disableButtons();
+    sendFeedback(0);
+  });
+</script>
+
+		<br />
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified April 24, 2019: <a  href="https://github.com/google/docsy-example/commit/313f542ec8a768cc38fe7acfb2d7b7d8115fe859">Updated example getting started page (313f542)</a>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing list" aria-label="User mailing list">
+    <a class="text-white" target="_blank" href="https://example.org/mail">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" href="https://example.org/twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Stack Overflow" aria-label="Stack Overflow">
+    <a class="text-white" target="_blank" href="https://example.org/stack">
+      <i class="fab fa-stack-overflow"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/mantielero/VapourSynth.nim">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Slack" aria-label="Slack">
+    <a class="text-white" target="_blank" href="https://example.org/slack">
+      <i class="fab fa-slack"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing list" aria-label="Developer mailing list">
+    <a class="text-white" target="_blank" href="https://example.org/mail">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 José María García All Rights Reserved</small>
+        
+	
+		<p class="mt-2"><a href="/nim4science/about/">About VapourSynth.nim</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<script src="/nim4science/js/main.min.625a36e0d7c278d120c2725ec9c02b70a4b759da1b787733a968b7c3567a21fe.js" integrity="sha256-Ylo24NfCeNEgwnJeycArcKS3WdobeHczqWi3w1Z6If4=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

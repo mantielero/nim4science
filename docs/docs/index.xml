@@ -1,0 +1,1017 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nim4science – Nim for Science and Engineering</title>
+    <link>https://mantielero.github.io/nim4science/docs/</link>
+    <description>Recent content in Nim for Science and Engineering on nim4science</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://mantielero.github.io/nim4science/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Installation</title>
+      <link>https://mantielero.github.io/nim4science/docs/getting-started/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/getting-started/installation/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;installing-nim&#34;&gt;Installing Nim&lt;/h2&gt;
+&lt;p&gt;I recommend checking the official &lt;a href=&#34;https://nim-lang.org/install.html&#34;&gt;Nim install&lt;/a&gt;. It is straight forward.&lt;/p&gt;
+&lt;p&gt;I recommend using &lt;a href=&#34;https://github.com/dom96/choosenim&#34;&gt;choosenim&lt;/a&gt; which makes easy to control the Nim version that you want to use.&lt;/p&gt;
+&lt;h2 id=&#34;installing-vapoursynth&#34;&gt;Installing VapourSynth&lt;/h2&gt;
+&lt;p&gt;In order to install VapourSynth, follow its &lt;a href=&#34;http://www.vapoursynth.com/doc/installation.html&#34;&gt;instructions&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;installing-vapoursynthnim&#34;&gt;Installing VapourSynth.nim&lt;/h2&gt;
+&lt;p&gt;In order to install VapourSynth you need to use nimble:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ nimble install https://github.com/mantielero/VapourSynth.nim
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Introduction</title>
+      <link>https://mantielero.github.io/nim4science/docs/getting-started/intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/getting-started/intro/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;python-vs-nim-syntax&#34;&gt;Python vs Nim syntax&lt;/h2&gt;
+&lt;p&gt;This sections aims to give you an idea about how you normally do things in Python and how can you do it in Nim&lt;/p&gt;
+&lt;h3 id=&#34;open-a-file-transpose-it-and-play-it&#34;&gt;Open a file, transpose it and play it&lt;/h3&gt;
+&lt;h4 id=&#34;python&#34;&gt;Python&lt;/h4&gt;
+&lt;p&gt;Create &lt;strong&gt;script.vpy&lt;/strong&gt; with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;core&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;video&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;core&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ffms2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;source&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;videofile.mkv&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;video&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;core&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;std&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Transpose&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;video&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;video&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;set_output&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and play it like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ vspipe --y4m script.vpy - | ffplay -i pipe:
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;nim&#34;&gt;Nim&lt;/h4&gt;
+&lt;p&gt;Create &lt;strong&gt;script.nim&lt;/strong&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;videofile.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Transpose&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Compile it:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ nim c -d:release -d:danger --threads:on script.nim
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and then you can play it like:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ ./script | ffplay -i pipe:
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;h2 id=&#34;current-status&#34;&gt;Current status&lt;/h2&gt;
+&lt;p&gt;It can load videos, transform them and pipe them to stdout (or store them in a file).&lt;/p&gt;
+&lt;p&gt;Currently, the following &lt;a href=&#34;https://github.com/mantielero/VapourSynth.nim/tree/master/src/plugins&#34;&gt;plugins&lt;/a&gt; are supposed to work (they need to be installed in your environment).&lt;/p&gt;
+&lt;p&gt;How to implement Nim functions as filters is shown in:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mantielero/VapourSynth.nim/blob/a022a045694c2bf1e93d821ff87f6a0a8916f098/test/simple.nim&#34;&gt;test/simple.nim&lt;/a&gt;: a very simple passthrough filter with comments&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mantielero/VapourSynth.nim/blob/a022a045694c2bf1e93d821ff87f6a0a8916f098/test/mycrop.nim&#34;&gt;test/mycrop.nim&lt;/a&gt;: a crop filter inspired on &lt;a href=&#34;https://github.com/vapoursynth/vapoursynth/blob/R48/src/core/simplefilters.c#L251&#34;&gt;cropRelCreate&lt;/a&gt;. Just crops a video giving &lt;code&gt;top&lt;/code&gt;, &lt;code&gt;bottom&lt;/code&gt;, &lt;code&gt;left&lt;/code&gt; and &lt;code&gt;right&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;some-examples&#34;&gt;Some examples&lt;/h2&gt;
+&lt;h3 id=&#34;piping-a-video&#34;&gt;Piping a video&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;selecting-the-first-100-frames&#34;&gt;Selecting the first 100 frames&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;aplying-one-of-vapoursynth-functionshttpwwwvapoursynthcomdocfunctionshtml-ex-transposehttpwwwvapoursynthcomdocfunctionstransposehtml&#34;&gt;Aplying one of &lt;a href=&#34;http://www.vapoursynth.com/doc/functions.html&#34;&gt;VapourSynth functions&lt;/a&gt; (ex. &lt;a href=&#34;http://www.vapoursynth.com/doc/functions/transpose.html&#34;&gt;Transpose&lt;/a&gt;)&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Transpose&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;Functions can be chained because, rather than a clip, the input is always a &lt;code&gt;ptr VSMap&lt;/code&gt;. Given that &lt;code&gt;invoke&lt;/code&gt; returns &lt;code&gt;ptr VSMap&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;aplying-one-function-from-a-plugin&#34;&gt;Aplying one function from a plugin&lt;/h3&gt;
+&lt;p&gt;The are two requirements in order to be able to use a function from a plugin:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The plugin needs to be installed in your computer&lt;/li&gt;
+&lt;li&gt;The plugin needs to be wrapped. You can find a list of the plugins already wrapped &lt;a href=&#34;https://github.com/mantielero/VapourSynth.nim/tree/master/src/plugins&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note that this wrappers are created automatically. You just need to install any plugin in your computer and then execute &lt;a href=&#34;https://github.com/mantielero/VapourSynth.nim/blob/master/src/plugin_generator.nim&#34;&gt;plugin_generator&lt;/a&gt;. It will create the folder &lt;code&gt;plugins&lt;/code&gt; for all the available plugins in your computer.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Then the function is called directly. For instance, the already used function &lt;code&gt;Source&lt;/code&gt; is provided by the plugin &lt;a href=&#34;https://github.com/mantielero/VapourSynth.nim/blob/master/src/plugins/ffms2.nim#L44&#34;&gt;ffms2&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;passing-parameters&#34;&gt;Passing parameters&lt;/h3&gt;
+&lt;p&gt;Mandatory parameters are passed straight away, like in the case of &lt;code&gt;Source&lt;/code&gt;, where we just put the name of the file:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;passing-list-parameters&#34;&gt;Passing list parameters&lt;/h3&gt;
+&lt;p&gt;In Nim the equivalent to lists are called sequence, and they are written like: &lt;code&gt;@[1, 2, 3]&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For example, if you use the plugin &lt;a href=&#34;https://github.com/dubhater/vapoursynth-motionmask&#34;&gt;motionmask&lt;/a&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import vapoursynth, options
+Source(&amp;quot;video.mkv&amp;quot;).MotionMask( th1= some(@[10, 10, 10]), th2= some(@[10, 10, 10]), tht=some(10), sc_value=some(0)).Pipey4m
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;not-only-chaining-functions-is-possible&#34;&gt;Not only chaining functions is possible&lt;/h3&gt;
+&lt;p&gt;You can store the videos in variables:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;options&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;clip1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;clip2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MotionMask&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;clip1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;th1&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;some&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;@[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;th2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;some&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;@[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;tht&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;some&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sc_value&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;some&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;
+
+&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;clip2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#Or you could pipe the first clip:&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#Pipey4m(clip1)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;additional-notes&#34;&gt;Additional notes.&lt;/h1&gt;
+&lt;h2 id=&#34;todo&#34;&gt;TODO&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;[DONE] Helper functions for +, [], &amp;hellip;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[DONE] Some functions no write filters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Better documentation&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[WON&amp;rsquo;T WORK] Does it work with nimscript? Given Nimscript limitation: &amp;ldquo;Nim&amp;rsquo;s FFI (foreign function interface) is not available in NimScript. This means that any stdlib module which relies on importc can not be used in the VM.&amp;rdquo;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Github pages&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; To enable dealing with frames like an array.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; To enable loading plugins manually.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; To enable loading AVS scripts (for instance for deinlerlacing). Options are &lt;a href=&#34;http://avisynth.nl/index.php/AviSource&#34;&gt;AviSource&lt;/a&gt;. &lt;a href=&#34;https://github.com/chikuzen/VS_AvsReader&#34;&gt;VS_AvsReader&lt;/a&gt; and &lt;a href=&#34;https://forum.doom9.org/showthread.php?t=165957&#34;&gt;vsavsreader&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; To take a look at &lt;a href=&#34;https://github.com/HomeOfVapourSynthEvolution/havsfunc/blob/master/havsfunc.py&#34;&gt;Home Of VapourSynth Evolution&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; To compare with this &lt;a href=&#34;https://forum.doom9.org/showthread.php?t=172206&#34;&gt;filter in pure python&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;vapoursynth-tutorial&#34;&gt;Vapoursynth Tutorial&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://hackmd.io/@Se1ry_ZUSminEO7QQyVHAQ/HJwtY1WV7?type=view&#34;&gt;https://hackmd.io/@Se1ry_ZUSminEO7QQyVHAQ/HJwtY1WV7?type=view&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;avisynth&#34;&gt;Avisynth&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://forum.doom9.org/showthread.php?t=175141&#34;&gt;https://forum.doom9.org/showthread.php?t=175141&lt;/a&gt;
+&lt;a href=&#34;https://forum.doom9.org/showthread.php?t=165957&#34;&gt;https://forum.doom9.org/showthread.php?t=165957&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/HomeOfVapourSynthEvolution/VapourSynth-AddGrain/blob/master/AddGrain/AddGrain.cpp&#34;&gt;AddGrain&lt;/a&gt;,&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Algebra</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/algebra/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/algebra/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;multidimensional-arrays-linear-algebra&#34;&gt;Multidimensional arrays, Linear-algebra&lt;/h2&gt;
+&lt;p&gt;Multidimensional arrays are the basic block of scientific computing, it goes beyond the 2D or 3D vectors and matrices. Notable non-Nim implementations include Fortran, Julia, Matlab and Numpy.&lt;/p&gt;
+&lt;p&gt;Status: in-progress&lt;/p&gt;
+&lt;h3 id=&#34;arraymancer&#34;&gt;Arraymancer&lt;/h3&gt;
+&lt;p&gt;Arraymancer supports dense multidimensional arrays of any type, on CPU (integers, floats, complex), Cuda and OpenCL (float only) and uses BLAS, CuBLAS and Clblast under the hood.&lt;/p&gt;
+&lt;h3 id=&#34;arrayfire-nim&#34;&gt;ArrayFire-Nim&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/bitstormGER/ArrayFire-Nim&#34;&gt;ArrayFire-Nim&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;neo&#34;&gt;Neo&lt;/h3&gt;
+&lt;p&gt;Neo supports dense and sparse float vectors and matrices, on CPU and Cuda (Nvidia GPUs) and also uses BLAS and LAPACK under the hood.&lt;/p&gt;
+&lt;h3 id=&#34;nimtorch&#34;&gt;NimTorch&lt;/h3&gt;
+&lt;p&gt;NimTorch supports most PyTorch features regarding multidimensional arrays, on CPU, Cuda, OpenCL and AMD ROCm provided you compiled PyTorch&amp;rsquo;s Aten backend with the relevant features.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Slicing and other syntactic suger</title>
+      <link>https://mantielero.github.io/nim4science/docs/getting-started/slicing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/getting-started/slicing/</guid>
+      <description>
+        
+        
+        &lt;p&gt;In Python you can perform &lt;a href=&#34;http://www.vapoursynth.com/doc/pythonreference.html#slicing-and-other-syntactic-sugar&#34;&gt;slicing&lt;/a&gt; on the clips.&lt;/p&gt;
+&lt;p&gt;VapourSynth.nim provides similar capabilities. One difference is that VapoutSynth.nim returns &lt;code&gt;ptr VSMap&lt;/code&gt; instead of clip or clips.&lt;/p&gt;
+&lt;p&gt;As in Python, the first frame has number &lt;code&gt;0&lt;/code&gt;. The last frame is referenced as &lt;code&gt;last&lt;/code&gt; or &lt;code&gt;-1&lt;/code&gt;. So it is ok to write:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;clip&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;last&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can operate on &lt;code&gt;last&lt;/code&gt; like:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;clip&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;15&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;last&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The frames can be reversed by changing the order. Is it ok to do:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;clip&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;last&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;or:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;clip&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;last&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can skip frames for instance:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Keeping Odd frames:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;clip&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;last&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;Keeping Even frames:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;clip&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;last&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;concatenating-clips&#34;&gt;Concatenating clips&lt;/h2&gt;
+&lt;p&gt;It is feasible to perform:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;clip&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;50&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;clip&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;50&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;..&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;repeating-clips&#34;&gt;Repeating clips&lt;/h2&gt;
+&lt;p&gt;It is ok to do:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;clip1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;clip&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;40&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;clip2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;40&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;clip&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;They both work&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;TODO: We should use the same approach as VapourSynth: using Loop&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Image</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/image/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/image/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;image-processing-library&#34;&gt;Image processing library&lt;/h2&gt;
+&lt;p&gt;Computer vision is a thriving area of research. Vision scientists needs algorithms that works on images represented as a multidimensional arrays (different from say Photoshop), preferably multithreaded and GPU accelerated.&lt;/p&gt;
+&lt;p&gt;Notable non-Nim libraries include OpenCV, Matlab, Python scikit-image, scipy.ndimage and mahotas.&lt;/p&gt;
+&lt;p&gt;Status: in-progress&lt;/p&gt;
+&lt;h3 id=&#34;nim-bindings-for-opencv-by-dom96&#34;&gt;Nim bindings for OpenCV by @dom96.&lt;/h3&gt;
+&lt;p&gt;Unmaintained:&lt;/p&gt;
+&lt;h3 id=&#34;arraymancer-vision-by-edubart&#34;&gt;Arraymancer-vision by @edubart&lt;/h3&gt;
+&lt;p&gt;Nim-opencv provides rough low-level bindings of OpenCV functions.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Plotting</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/plotting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/plotting/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;plotting&#34;&gt;Plotting&lt;/h2&gt;
+&lt;p&gt;Data analysis requires plotting, notable non-Nim implementations include Python matplotlib and seaborn, Plot.ly (Python, R, Javascript), R ggplot2, Matlab and Facebook Visdom (a simple interface to Plot.ly).&lt;/p&gt;
+&lt;p&gt;Note that there are a couple of approach to plotting, either having a charting library or having a high-level grammar library (similar to SQL) that hides low-level details of a chart.&lt;/p&gt;
+&lt;p&gt;Status: in-progress
+Libraries:&lt;/p&gt;
+&lt;p&gt;Unmaintained:&lt;/p&gt;
+&lt;p&gt;arraymancer-vision has a very simple interface to Facebook&amp;rsquo;s Visdom here.&lt;/p&gt;
+&lt;h3 id=&#34;ggplotnim&#34;&gt;ggplotnim&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Vindaar/ggplotnim&#34;&gt;ggplotnim&lt;/a&gt; is an implementation in pure Nim of the graphics of grammar. There are some &lt;a href=&#34;https://github.com/Vindaar/ggplotnim/blob/master/recipes.org&#34;&gt;recipes&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;gnuplotnim&#34;&gt;gnuplot.nim&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dvolk/gnuplot.nim&#34;&gt;gnuplot.nim&lt;/a&gt; is a wrapper of gnuplot.&lt;/p&gt;
+&lt;h3 id=&#34;nim-plotly&#34;&gt;nim-plotly&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/brentp/nim-plotly&#34;&gt;nim-plotly&lt;/a&gt; uses the plot.ly charting library as a backend. Both MetaPlot and Monocle uses the Vega visualization grammar.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/sdwfrost/nim-plotly-example&#34;&gt;https://github.com/sdwfrost/nim-plotly-example&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;proof-of-concepts&#34;&gt;Proof-of-concepts&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/stisa/graph&#34;&gt;Graph&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MetaPlot&lt;/li&gt;
+&lt;li&gt;Monocle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;potential-libraries&#34;&gt;Potential libraries&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://gr-framework.org/&#34;&gt;GR framework&lt;/a&gt;: GR is a universal framework for cross-platform visualization applications. It offers developers a compact, portable and consistent graphics library for their programs. Applications range from publication quality 2D graphs to the representation of complex 3D scenes.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://root.cern.ch/gallery&#34;&gt;ROOT&lt;/a&gt;: it is quite big. It is C++.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://jkriege2.github.io/JKQtPlotter/index.html:&#34;&gt;http://jkriege2.github.io/JKQtPlotter/index.html:&lt;/a&gt; for QT.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/arrayfire/forge&#34;&gt;forge&lt;/a&gt;: it seems like arrayfire is already &lt;a href=&#34;https://github.com/bitstormGER/ArrayFire-Nim&#34;&gt;wrapped&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.qcustomplot.com/&#34;&gt;QCustomPlot&lt;/a&gt;: c++ / qt&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Dataframe</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/dataframe/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/dataframe/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;dataframe-and-columnartabular-data-processing&#34;&gt;Dataframe and columnar/tabular data processing&lt;/h2&gt;
+&lt;p&gt;Dataframes are essential to process structured data (say Name, Age, number of products bought, last time of visit). They allow very efficient data manipulation, including easily creating new columns, joining dataframes, converting between types.&lt;/p&gt;
+&lt;p&gt;Notable non-Nim packages include Python Pandas and R datatable. When data does not fit in RAM, dataframe packages are interfaced with SQL or HDF5 datastores or even Spark for very large scale processing.&lt;/p&gt;
+&lt;h3 id=&#34;nimdata&#34;&gt;NimData&lt;/h3&gt;
+&lt;p&gt;NimData provides dataframe facilities to Nim&lt;/p&gt;
+&lt;p&gt;Status: in-progress&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Serialization</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/serialization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/serialization/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;scientific-serialization-format&#34;&gt;Scientific serialization format&lt;/h2&gt;
+&lt;p&gt;There are many formats specific to science ot even science domains.&lt;/p&gt;
+&lt;p&gt;Libraries:&lt;/p&gt;
+&lt;p&gt;nim-hdf5, wrapper for the HDF5 data format&lt;/p&gt;
+&lt;h3 id=&#34;nimhdf5&#34;&gt;nimhdf5&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Vindaar/nimhdf5&#34;&gt;nimhdf5&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Geospatial</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/geospatial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/geospatial/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;geospatial-library&#34;&gt;Geospatial library&lt;/h2&gt;
+&lt;p&gt;Often scientist needs to deal with geospatial coordinate (latitude, longitude), maps and distances.&lt;/p&gt;
+&lt;p&gt;This include efficient data-structures like KD-Tree or RTree to compute distances between points and distance formulas like Haversine to compute distance on a sphere.&lt;/p&gt;
+&lt;p&gt;Notable non-Nim libraries include Python&amp;rsquo;s scipy.spatial, Geopy, Shapely&lt;/p&gt;
+&lt;p&gt;Status: in-progress
+R-tree forum thread.&lt;/p&gt;
+&lt;p&gt;R-trees
+Kd-trees: &lt;a href=&#34;https://github.com/jblindsay/kdtree&#34;&gt;https://github.com/jblindsay/kdtree&lt;/a&gt;
+Proof-of-concepts:&lt;/p&gt;
+&lt;p&gt;GDAL wrapper (Geospatial Data Abstraction Library)&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Random</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/random/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/random/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;random-library&#34;&gt;Random library&lt;/h2&gt;
+&lt;p&gt;Lots of scientific algorithms rely on stochastic processes or random distribution.
+At the very least pseudo-random generator that samples from a normal/gaussian distribution is needed.&lt;/p&gt;
+&lt;p&gt;Notable non-Nim library include Scipy&lt;/p&gt;
+&lt;p&gt;Status: in-progress
+Libraries:&lt;/p&gt;
+&lt;p&gt;Alea by @andreaferretti allows sampling from non-uniform distributions (Gaussian, Bernoulli, Poisson &amp;hellip;)
+Standard library and Nim-random by @oprypin only allows uniform sampling.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Scientific language bindings</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/bindings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/bindings/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;scientific-language-bindings&#34;&gt;Scientific language bindings&lt;/h2&gt;
+&lt;h3 id=&#34;python&#34;&gt;Python&lt;/h3&gt;
+&lt;p&gt;Nimpy
+Unmaintained&lt;/p&gt;
+&lt;p&gt;nim-pymod, this includes Numpy support and was used by the startup Object AI
+python3, raw python3 wrapper&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;nim-pymod is not mantained and a little cumbersome in that it requires its own scripts to build, but it allows to send ndarrays back and forth&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;nimpy looks more actively mantained but I am not sure whether it supports Numpy types&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;python3 seems to be another one, but I am not sure of its status&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Deep Learning</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/deep_learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/deep_learning/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;deep-learning--neural-network&#34;&gt;Deep learning &amp;amp; neural network&lt;/h2&gt;
+&lt;p&gt;Deep learning is machine learning with neural networks and arguably eating the world (or atleast Reddit, Hacker News and sponsors). In comparison to most traditional machine learning tools, neural networks can also learn very well from non-structured data (images, sounds, text &amp;hellip;).&lt;/p&gt;
+&lt;p&gt;Notable non-Nim libraries include: Facebook Torch, Google Tensorflow, Apache and Amazon Mxnet&lt;/p&gt;
+&lt;p&gt;Status: in-progress
+Libraries:&lt;/p&gt;
+&lt;p&gt;Arraymancer
+NimTorch
+Proof-of-concept:&lt;/p&gt;
+&lt;p&gt;Neurotic was a proof of concept to build simple neural network on Neo/linalg&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Geometry</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/geometry/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/geometry/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;geometry&#34;&gt;Geometry&lt;/h2&gt;
+&lt;p&gt;Computational geometry also require tuned algorithms for: geometry primitives, polygons and polyhedron, triangulations, distances, shape analysis &amp;hellip;&lt;/p&gt;
+&lt;p&gt;Noteable non-Nim library: CGAL&lt;/p&gt;
+&lt;p&gt;Status: no library&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Linear</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/linear/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/linear/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;linear-programming&#34;&gt;Linear programming&lt;/h2&gt;
+&lt;p&gt;Status: in-progress
+Libraries:&lt;/p&gt;
+&lt;p&gt;nim-isl, wrapper for the ISL parametric integer linear programming library&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Machine Learning</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/machine_learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/machine_learning/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;machine-learning&#34;&gt;Machine learning&lt;/h2&gt;
+&lt;p&gt;Machine learning is how to teach a computer to learn/generalize patterns from data.&lt;/p&gt;
+&lt;p&gt;Notable non-Nim libraries include: Python&amp;rsquo;s Scikit-Learn and R&amp;rsquo;s Caret.
+State-of-the-art C++ library to wrap: XGBoost&lt;/p&gt;
+&lt;p&gt;Status: in-progress&lt;/p&gt;
+&lt;p&gt;Arraymancer
+libsvm (Support Vector Machines) wrapper
+&lt;a href=&#34;https://github.com/fragcolor-xyz/nimtorch&#34;&gt;NimTorch&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Natural Language Processing</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/nlp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/nlp/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;natural-language-processing&#34;&gt;Natural Language Processing&lt;/h2&gt;
+&lt;p&gt;Do we want a category for natural language processing? Examples of Python libraries are nltk, gensim, spacy, and scikit-learn.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Nim-NLP&#34;&gt;https://github.com/Nim-NLP&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;other-text-tokenizers&#34;&gt;Other text tokenizers&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/microsoft/BlingFire&#34;&gt;https://github.com/microsoft/BlingFire&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/google/sentencepiece&#34;&gt;https://github.com/google/sentencepiece&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Non-Linear Solver</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/nonlinear/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/nonlinear/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;non-linear-optimization&#34;&gt;Non-linear optimization&lt;/h2&gt;
+&lt;p&gt;Status: in-progress
+Libraries:&lt;/p&gt;
+&lt;p&gt;MPFIT (Non-Linear Least squares fitting)
+&lt;a href=&#34;https://github.com/Vindaar/nimnlopt&#34;&gt;nimnlopt&lt;/a&gt;, wrapper for the nlopt library&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Non-linear least square fitting
+&lt;a href=&#34;https://github.com/Vindaar/nim-mpfit&#34;&gt;https://github.com/Vindaar/nim-mpfit&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Other</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/other/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/other/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Space here for other libraries&lt;/p&gt;
+&lt;p&gt;Placeholder.&lt;/p&gt;
+&lt;p&gt;To avoid polluting this meta-thread with specific discussion on certain topics (say what I want in the random library), this will link to the discussion topics:&lt;/p&gt;
+&lt;p&gt;Multidimensional arrays, Linear-algebra
+#14, #17, #25, #50, #59&lt;/p&gt;
+&lt;p&gt;Plotting
+#17, #51, #70&lt;/p&gt;
+&lt;p&gt;Geospatial
+#13, #69&lt;/p&gt;
+&lt;p&gt;Image processing
+#69&lt;/p&gt;
+&lt;p&gt;Dataframes, columnar/tabular data processing
+#20, #47, #33&lt;/p&gt;
+&lt;p&gt;Random
+#40&lt;/p&gt;
+&lt;p&gt;Statistics
+#16&lt;/p&gt;
+&lt;p&gt;Machine learning
+#48&lt;/p&gt;
+&lt;p&gt;Deep learning
+No issue open&lt;/p&gt;
+&lt;p&gt;Computational Geometry
+#53&lt;/p&gt;
+&lt;p&gt;For some precision engineering/scientific applications, the ability to use arbitrary precision floating point arithmetic would be useful. Does an MPFR wrapper a la Julia&amp;rsquo;s built-in support for BigFloat belong on this list?&lt;/p&gt;
+&lt;p&gt;it seems that there is still no computer algebra system module like &lt;a href=&#34;https://www.sympy.org/&#34;&gt;https://www.sympy.org/&lt;/a&gt;. I also made a post &lt;a href=&#34;https://forum.nim-lang.org/t/4165&#34;&gt;https://forum.nim-lang.org/t/4165&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;repl--jupyter-like&#34;&gt;REPL / JUPYTER-like&lt;/h2&gt;
+&lt;p&gt;having a (nearly?) fully functional jupyter kernel would be quite useful for my work and, I suspect for many people.&lt;/p&gt;
+&lt;p&gt;@brentp: There is (or was) jupyternim: &lt;a href=&#34;https://github.com/stisa/jupyternim&#34;&gt;https://github.com/stisa/jupyternim&lt;/a&gt;
+I&amp;rsquo;m not sure if it&amp;rsquo;s abandoned and/or still compiles (last activity Oct 2018); I have never used it. Its downside is that it was written without hot code reloading in mind of course. However, I think it&amp;rsquo;d provide a nice basis for an updated implementation, which uses HCR for the relevant parts and the socket communication of jupyternim.&lt;/p&gt;
+&lt;p&gt;I once started playing around with HCR, but wasn&amp;rsquo;t very successful even implementing a trivial repl, &lt;a href=&#34;https://github.com/vindaar/brokenrepl&#34;&gt;https://github.com/vindaar/brokenrepl&lt;/a&gt;. Posting it here if anyone wants to give it a try.&lt;/p&gt;
+&lt;p&gt;yes, I saw that and inim from @stisa, now that there are ggplots and dataframes, the notebook would a be a boon.&lt;/p&gt;
+&lt;p&gt;(my) jupyternim and inim are the same code, there was a naming conflict with &lt;a href=&#34;https://github.com/AndreiRegiani/INim&#34;&gt;https://github.com/AndreiRegiani/INim&lt;/a&gt; so I renamed it. I agree it&amp;rsquo;s due an update, but I have been pretty busy this year.
+Last time I saw, HCR was limited to JS target, looking at &lt;a href=&#34;https://nim-lang.org/docs/hcr.html&#34;&gt;https://nim-lang.org/docs/hcr.html&lt;/a&gt; there was a lot of progress so I may have a look into adopting it when I get some free time, if nobody starts working on it first.&lt;/p&gt;
+&lt;h2 id=&#34;more-stuff&#34;&gt;More stuff&lt;/h2&gt;
+&lt;p&gt;@chemist69 Jupyternim predates hot-code reloading which was written also with jupyter kernel in mind and should be less hacky. No idea though on how to use it in practice.&lt;/p&gt;
+&lt;p&gt;Docs if someone want to play with it: &lt;a href=&#34;https://nim-lang.org/docs/hcr.html&#34;&gt;https://nim-lang.org/docs/hcr.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;@miran In terms of plotting we have nim-plotly and ggplotnim which is written from scratch.&lt;/p&gt;
+&lt;p&gt;On my side I&amp;rsquo;m still convinced that the Vega ecosystem is probably one of the best ways forward. Especially because they provide an open-source Tableau called Lyra (build with feedback from Tableau people) and most impressively a tool that does automatic suggestions of data visualizations called Voyager&lt;/p&gt;
+&lt;p&gt;This is the video that sold me on Vega from the OpenVis 2015 conference. Focus on Voyager at 19:15 - &lt;a href=&#34;https://youtu.be/GdoDLuPe-Wg?t=1155&#34;&gt;https://youtu.be/GdoDLuPe-Wg?t=1155&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I have a PoC of calling Vega lite from Nim here: &lt;a href=&#34;https://github.com/numforge/monocle&#34;&gt;https://github.com/numforge/monocle&lt;/a&gt; but I have no time to work on it for the foreseeable future.&lt;/p&gt;
+&lt;h2 id=&#34;some-inspiration&#34;&gt;Some inspiration&lt;/h2&gt;
+&lt;h3 id=&#34;scipy-structure&#34;&gt;Scipy structure&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic functions&lt;/li&gt;
+&lt;li&gt;Special functions (scipy.special)&lt;/li&gt;
+&lt;li&gt;Integration (scipy.integrate)&lt;/li&gt;
+&lt;li&gt;Optimization (scipy.optimize)&lt;/li&gt;
+&lt;li&gt;Interpolation (scipy.interpolate)&lt;/li&gt;
+&lt;li&gt;Fourier Transforms (scipy.fft)&lt;/li&gt;
+&lt;li&gt;Signal Processing (scipy.signal)&lt;/li&gt;
+&lt;li&gt;Linear Algebra (scipy.linalg)&lt;/li&gt;
+&lt;li&gt;Sparse eigenvalue problems with ARPACK&lt;/li&gt;
+&lt;li&gt;Compressed Sparse Graph Routines (scipy.sparse.csgraph)&lt;/li&gt;
+&lt;li&gt;Spatial data structures and algorithms (scipy.spatial)&lt;/li&gt;
+&lt;li&gt;Statistics (scipy.stats)&lt;/li&gt;
+&lt;li&gt;Multidimensional image processing (scipy.ndimage)&lt;/li&gt;
+&lt;li&gt;File IO (scipy.io)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;awesome-julia&#34;&gt;Awesome Julia&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Julia Lang-the language - The core language and other libraries in Julia.&lt;/li&gt;
+&lt;li&gt;Julia Stats- Statistic and Machine learning enthusiasts.&lt;/li&gt;
+&lt;li&gt;Julia Opt- Solutions and libraries for Mathematical Optimization.&lt;/li&gt;
+&lt;li&gt;Julia Parallel-Various models of Parallel Programming in Julia.&lt;/li&gt;
+&lt;li&gt;Julia Astro - Astronomy and Astrophysics packages for Julia.&lt;/li&gt;
+&lt;li&gt;Julia Quant -Quantitative Finance Libraries in Julia.&lt;/li&gt;
+&lt;li&gt;Julia Quantum - Julia Libraries for Quantum Science and Technology.&lt;/li&gt;
+&lt;li&gt;Julia Sparse -Sparse Matrix and Graph Partioning libraries.&lt;/li&gt;
+&lt;li&gt;Julia Diff - Differential Tools in Julia.&lt;/li&gt;
+&lt;li&gt;Julia GPU - GPU computing for Julia&lt;/li&gt;
+&lt;li&gt;Julia Web - Libraries for the web . Includes sockets, requests, curl, GeoIP and much more.&lt;/li&gt;
+&lt;li&gt;Julia CI - Continous Integration support for Julia. Includes Travis Builds and Tests.&lt;/li&gt;
+&lt;li&gt;BioJulia - -Bioinformatics Research.&lt;/li&gt;
+&lt;li&gt;JuliaBox - Code Julia on the go using a browser.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Physics</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/physics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/physics/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;computational-physics&#34;&gt;Computational Physics&lt;/h2&gt;
+&lt;p&gt;Status: in-progress
+Libraries:&lt;/p&gt;
+&lt;p&gt;Numerical Nim, Differential Equation solver and numerical integration
+Orbits. Orbital mechanics library for Nim (for planetoids).
+QEX, QUantum Expression and Lattice Field Theory framework. Presentation slides at CERN and paper.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Simulation</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/simulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/simulation/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;simulation&#34;&gt;Simulation&lt;/h2&gt;
+&lt;p&gt;What about simulation? Something like simulink, &lt;a href=&#34;https://www.modelica.org/&#34;&gt;modelica&lt;/a&gt; or &lt;a href=&#34;https://github.com/ModiaSim/Modia.jl/blob/master/README.md&#34;&gt;Modia&lt;/a&gt; (in Julia).&lt;/p&gt;
+&lt;p&gt;It would be nice something similar to Modia in particular, given Nim&amp;rsquo;s metaprogramming capabilities.&lt;/p&gt;
+&lt;p&gt;One area where I believe nim could shine is in exporting FMU model (following the &lt;a href=&#34;https://fmi-standard.org/&#34;&gt;FMI standard&lt;/a&gt;). I don&amp;rsquo;t see python doing that. An even for Julia is a struggle because they need to export the runtime for compiled stuff which is big and not straightforward (&lt;a href=&#34;https://discourse.julialang.org/t/export-interface-julia-code-to-fmi-fmu-standard-fmu/21211/3&#34;&gt;here&lt;/a&gt; you can see how the libraries take above 100Mb for a simple example, when compiled ahead of time).&lt;/p&gt;
+&lt;h2 id=&#34;relevant-links&#34;&gt;Relevant links&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ghorwin/FMICodeGenerator/blob/master/readme.md&#34;&gt;FMI Code Generator&lt;/a&gt;
+&lt;a href=&#34;https://www.qtronic.de/en/fmu-sdk/&#34;&gt;FMU SDK&lt;/a&gt;
+&lt;a href=&#34;https://computation.llnl.gov/projects/sundials&#34;&gt;Sundials&lt;/a&gt;: SUite of Nonlinear and DIfferential/ALgebraic Equation Solvers in order to embed the solver in the FMU. Bindings for this would be useful even on itself.
+&lt;a href=&#34;https://github.com/LBNL-ETA/SimulatorToFMU&#34;&gt;SimulatorToFMU&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Statistics</title>
+      <link>https://mantielero.github.io/nim4science/docs/libraries/stats/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/libraries/stats/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;statistics&#34;&gt;Statistics&lt;/h2&gt;
+&lt;p&gt;Notable language: R&lt;/p&gt;
+&lt;p&gt;Status: standard lib statistics module&lt;/p&gt;
+&lt;p&gt;Nim stats&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Parameter Reference</title>
+      <link>https://mantielero.github.io/nim4science/docs/reference/parameter-reference/</link>
+      <pubDate>Thu, 05 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/reference/parameter-reference/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;This is a placeholder page. Replace it with your own content.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Text can be &lt;strong&gt;bold&lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;, or &lt;del&gt;strikethrough&lt;/del&gt;. &lt;a href=&#34;https://gohugo.io&#34;&gt;Links&lt;/a&gt; should be blue with no underlines (unless hovered over).&lt;/p&gt;
+&lt;p&gt;There should be whitespace between paragraphs. Vape migas chillwave sriracha poutine try-hard distillery. Tattooed shabby chic small batch, pabst art party heirloom letterpress air plant pop-up. Sustainable chia skateboard art party banjo cardigan normcore affogato vexillologist quinoa meggings man bun master cleanse shoreditch readymade. Yuccie prism four dollar toast tbh cardigan iPhone, tumblr listicle live-edge VHS. Pug lyft normcore hot chicken biodiesel, actually keffiyeh thundercats photo booth pour-over twee fam food truck microdosing banh mi. Vice activated charcoal raclette unicorn live-edge post-ironic. Heirloom vexillologist coloring book, beard deep v letterpress echo park humblebrag tilde.&lt;/p&gt;
+&lt;p&gt;90&amp;rsquo;s four loko seitan photo booth gochujang freegan tumeric listicle fam ugh humblebrag. Bespoke leggings gastropub, biodiesel brunch pug fashion axe meh swag art party neutra deep v chia. Enamel pin fanny pack knausgaard tofu, artisan cronut hammock meditation occupy master cleanse chartreuse lumbersexual. Kombucha kogi viral truffaut synth distillery single-origin coffee ugh slow-carb marfa selfies. Pitchfork schlitz semiotics fanny pack, ugh artisan vegan vaporware hexagon. Polaroid fixie post-ironic venmo wolf ramps &lt;strong&gt;kale chips&lt;/strong&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There should be no margin above this first sentence.&lt;/p&gt;
+&lt;p&gt;Blockquotes should be a lighter gray with a border along the left side in the secondary color.&lt;/p&gt;
+&lt;p&gt;There should be no margin below this final sentence.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;first-header-2&#34;&gt;First Header 2&lt;/h2&gt;
+&lt;p&gt;This is a normal paragraph following a header. Knausgaard kale chips snackwave microdosing cronut copper mug swag synth bitters letterpress glossier &lt;strong&gt;craft beer&lt;/strong&gt;. Mumblecore bushwick authentic gochujang vegan chambray meditation jean shorts irony. Viral farm-to-table kale chips, pork belly palo santo distillery activated charcoal aesthetic jianbing air plant woke lomo VHS organic. Tattooed locavore succulents heirloom, small batch sriracha echo park DIY af. Shaman you probably haven&amp;rsquo;t heard of them copper mug, crucifix green juice vape &lt;em&gt;single-origin coffee&lt;/em&gt; brunch actually. Mustache etsy vexillologist raclette authentic fam. Tousled beard humblebrag asymmetrical. I love turkey, I love my job, I love my friends, I love Chardonnay!&lt;/p&gt;
+&lt;p&gt;Deae legum paulatimque terra, non vos mutata tacet: dic. Vocant docuique me plumas fila quin afuerunt copia haec o neque.&lt;/p&gt;
+&lt;p&gt;On big screens, paragraphs and headings should not take up the full container width, but we want tables, code blocks and similar to take the full width.&lt;/p&gt;
+&lt;p&gt;Scenester tumeric pickled, authentic crucifix post-ironic fam freegan VHS pork belly 8-bit yuccie PBR&amp;amp;B. &lt;strong&gt;I love this life we live in&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;second-header-2&#34;&gt;Second Header 2&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a blockquote following a header. Bacon ipsum dolor sit amet t-bone doner shank drumstick, pork belly porchetta chuck sausage brisket ham hock rump pig. Chuck kielbasa leberkas, pork bresaola ham hock filet mignon cow shoulder short ribs biltong.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;header-3&#34;&gt;Header 3&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;This is a code block following a header.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Next level leggings before they sold out, PBR&amp;amp;B church-key shaman echo park. Kale chips occupy godard whatever pop-up freegan pork belly selfies. Gastropub Belinda subway tile woke post-ironic seitan. Shabby chic man bun semiotics vape, chia messenger bag plaid cardigan.&lt;/p&gt;
+&lt;h4 id=&#34;header-4&#34;&gt;Header 4&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;This is an unordered list following a header.&lt;/li&gt;
+&lt;li&gt;This is an unordered list following a header.&lt;/li&gt;
+&lt;li&gt;This is an unordered list following a header.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;header-5&#34;&gt;Header 5&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;This is an ordered list following a header.&lt;/li&gt;
+&lt;li&gt;This is an ordered list following a header.&lt;/li&gt;
+&lt;li&gt;This is an ordered list following a header.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h6 id=&#34;header-6&#34;&gt;Header 6&lt;/h6&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;What&lt;/th&gt;
+&lt;th&gt;Follows&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;A table&lt;/td&gt;
+&lt;td&gt;A header&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;A table&lt;/td&gt;
+&lt;td&gt;A header&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;A table&lt;/td&gt;
+&lt;td&gt;A header&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;p&gt;There&amp;rsquo;s a horizontal rule above and below this.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Here is an unordered list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Liverpool F.C.&lt;/li&gt;
+&lt;li&gt;Chelsea F.C.&lt;/li&gt;
+&lt;li&gt;Manchester United F.C.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And an ordered list:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Michael Brecker&lt;/li&gt;
+&lt;li&gt;Seamus Blake&lt;/li&gt;
+&lt;li&gt;Branford Marsalis&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;And an unordered task list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a Hugo theme&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add task lists to it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Take a vacation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pack bags&lt;/li&gt;
+&lt;li&gt;?&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Travel!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And a nested list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Jackson 5
+&lt;ul&gt;
+&lt;li&gt;Michael&lt;/li&gt;
+&lt;li&gt;Tito&lt;/li&gt;
+&lt;li&gt;Jackie&lt;/li&gt;
+&lt;li&gt;Marlon&lt;/li&gt;
+&lt;li&gt;Jermaine&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;TMNT
+&lt;ul&gt;
+&lt;li&gt;Leonardo&lt;/li&gt;
+&lt;li&gt;Michelangelo&lt;/li&gt;
+&lt;li&gt;Donatello&lt;/li&gt;
+&lt;li&gt;Raphael&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Definition lists can be used with Markdown syntax. Definition headers are bold.&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Name&lt;/dt&gt;
+&lt;dd&gt;Godzilla&lt;/dd&gt;
+&lt;dt&gt;Born&lt;/dt&gt;
+&lt;dd&gt;1952&lt;/dd&gt;
+&lt;dt&gt;Birthplace&lt;/dt&gt;
+&lt;dd&gt;Japan&lt;/dd&gt;
+&lt;dt&gt;Color&lt;/dt&gt;
+&lt;dd&gt;Green&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;hr&gt;
+&lt;p&gt;Tables should have bold headings and alternating shaded rows.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Artist&lt;/th&gt;
+&lt;th&gt;Album&lt;/th&gt;
+&lt;th&gt;Year&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Michael Jackson&lt;/td&gt;
+&lt;td&gt;Thriller&lt;/td&gt;
+&lt;td&gt;1982&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Prince&lt;/td&gt;
+&lt;td&gt;Purple Rain&lt;/td&gt;
+&lt;td&gt;1984&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Beastie Boys&lt;/td&gt;
+&lt;td&gt;License to Ill&lt;/td&gt;
+&lt;td&gt;1986&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If a table is too wide, it should scroll horizontally.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Artist&lt;/th&gt;
+&lt;th&gt;Album&lt;/th&gt;
+&lt;th&gt;Year&lt;/th&gt;
+&lt;th&gt;Label&lt;/th&gt;
+&lt;th&gt;Awards&lt;/th&gt;
+&lt;th&gt;Songs&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Michael Jackson&lt;/td&gt;
+&lt;td&gt;Thriller&lt;/td&gt;
+&lt;td&gt;1982&lt;/td&gt;
+&lt;td&gt;Epic Records&lt;/td&gt;
+&lt;td&gt;Grammy Award for Album of the Year, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;amp;B Album, Brit Award for Best Selling Album, Grammy Award for Best Engineered Album, Non-Classical&lt;/td&gt;
+&lt;td&gt;Wanna Be Startin&amp;rsquo; Somethin&amp;rsquo;, Baby Be Mine, The Girl Is Mine, Thriller, Beat It, Billie Jean, Human Nature, P.Y.T. (Pretty Young Thing), The Lady in My Life&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Prince&lt;/td&gt;
+&lt;td&gt;Purple Rain&lt;/td&gt;
+&lt;td&gt;1984&lt;/td&gt;
+&lt;td&gt;Warner Brothers Records&lt;/td&gt;
+&lt;td&gt;Grammy Award for Best Score Soundtrack for Visual Media, American Music Award for Favorite Pop/Rock Album, American Music Award for Favorite Soul/R&amp;amp;B Album, Brit Award for Best Soundtrack/Cast Recording, Grammy Award for Best Rock Performance by a Duo or Group with Vocal&lt;/td&gt;
+&lt;td&gt;Let&amp;rsquo;s Go Crazy, Take Me With U, The Beautiful Ones, Computer Blue, Darling Nikki, When Doves Cry, I Would Die 4 U, Baby I&amp;rsquo;m a Star, Purple Rain&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Beastie Boys&lt;/td&gt;
+&lt;td&gt;License to Ill&lt;/td&gt;
+&lt;td&gt;1986&lt;/td&gt;
+&lt;td&gt;Mercury Records&lt;/td&gt;
+&lt;td&gt;noawardsbutthistablecelliswide&lt;/td&gt;
+&lt;td&gt;Rhymin &amp;amp; Stealin, The New Style, She&amp;rsquo;s Crafty, Posse in Effect, Slow Ride, Girls, (You Gotta) Fight for Your Right, No Sleep Till Brooklyn, Paul Revere, Hold It Now, Hit It, Brass Monkey, Slow and Low, Time to Get Ill&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;p&gt;Code snippets like &lt;code&gt;var foo = &amp;quot;bar&amp;quot;;&lt;/code&gt; can be shown inline.&lt;/p&gt;
+&lt;p&gt;Also, &lt;code&gt;this should vertically align&lt;/code&gt; &lt;del&gt;&lt;code&gt;with this&lt;/code&gt;&lt;/del&gt; &lt;del&gt;and this&lt;/del&gt;.&lt;/p&gt;
+&lt;p&gt;Code can also be shown in a block element.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;foo := &amp;quot;bar&amp;quot;;
+bar := &amp;quot;foo&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Code can also use syntax highlighting.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`var foo = &amp;#34;bar&amp;#34;;`&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Tokenise&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;styles&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
+
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Buffer&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Format&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline code inside table cells should still be distinguishable.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Language&lt;/th&gt;
+&lt;th&gt;Code&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Javascript&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;var foo = &amp;quot;bar&amp;quot;;&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ruby&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;foo = &amp;quot;bar&amp;quot;{&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;p&gt;Small images should be shown at their actual size.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/240px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Large images should always scale down and fit in the content container.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg/1024px-Picea_abies_shoot_with_buds%2C_Sogndal%2C_Norway.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;The photo above of the Spruce Picea abies shoot with foliage buds: Bjørn Erik Pedersen, CC-BY-SA.&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;components&#34;&gt;Components&lt;/h2&gt;
+&lt;h3 id=&#34;alerts&#34;&gt;Alerts&lt;/h3&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+
+This is an alert.
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+This is an alert with a title.
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+This is an alert with a title and &lt;strong&gt;Markdown&lt;/strong&gt;.
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-success&#34; role=&#34;alert&#34;&gt;
+
+This is a successful alert.
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+This is a warning.
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Warning&lt;/h4&gt;
+This is a warning with a title.
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;another-heading&#34;&gt;Another Heading&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: VapourSynth functions</title>
+      <link>https://mantielero.github.io/nim4science/docs/getting-started/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mantielero.github.io/nim4science/docs/getting-started/functions/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;VapourSynth provides a number of functions that you can find in the &lt;a href=&#34;http://www.vapoursynth.com/doc/functions.html&#34;&gt;Function Reference&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;At the end of the day, these are just filters included in a plugin named &lt;code&gt;std&lt;/code&gt;. The source code for these filters is in &lt;a href=&#34;https://github.com/vapoursynth/vapoursynth/blob/master/src/core/simplefilters.c&#34;&gt;simplefilter.c&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;most-of-them-work&#34;&gt;Most of them work&lt;/h2&gt;
+&lt;h3 id=&#34;using-a-filter&#34;&gt;Using a filter&lt;/h3&gt;
+&lt;p&gt;VapourSynth.nim treats &lt;code&gt;std&lt;/code&gt; plugin as any other plugin. It is already wrapped in &lt;a href=&#34;https://github.com/mantielero/VapourSynth.nim/blob/master/src/plugins/std.nim&#34;&gt;std.nim&lt;/a&gt; and you don&amp;rsquo;t need to do anything special to use it.&lt;/p&gt;
+&lt;p&gt;For instance, in order to apply the &lt;a href=&#34;http://www.vapoursynth.com/doc/functions/transpose.html&#34;&gt;Transpose&lt;/a&gt; filter:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Transpose&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;how-can-i-pass-parameters&#34;&gt;How can I pass parameters?&lt;/h3&gt;
+&lt;p&gt;The way I wrap the functions is that optional parameters can receive &lt;code&gt;none&lt;/code&gt; or &lt;code&gt;some&lt;/code&gt; value. By default, I am passing &lt;code&gt;none&lt;/code&gt; to all the optional parameters. Optional parameters requires importing the &lt;code&gt;options&lt;/code&gt; module, which provides the keyword &lt;code&gt;some&lt;/code&gt;. If you want to pass something different you have to do it like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;options&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Bicubic&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;some&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;320&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;some&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;In Nim, it is equivalent doing: &lt;code&gt;some(320)&lt;/code&gt;, &lt;code&gt;320.some&lt;/code&gt; and &lt;code&gt;some 320&lt;/code&gt; so you could write:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;options&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Bicubic&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;320.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;some&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;some&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;
+                                  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;^^^^^^^^&lt;/span&gt;         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;^^^^^^^^&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;You could create a custom function making this parameters mandatory. This might be useful if you are going to call the same function with the same signature many times (and you want to avoid writting &lt;code&gt;some&lt;/code&gt; many times:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vapoursynth&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;options&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;proc &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;myfilter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;vsmap&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;ptr&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;VSMap&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;w&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;h&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;):&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;ptr&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;VSMap&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; 
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;vsmap&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Bicubic&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;width&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;some&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;w&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;some&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;h&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;
+
+&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;myfilter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;320&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;All the filters in VapourSynth.nim, has a first argument typed &lt;code&gt;ptr VSMap&lt;/code&gt; and returns a &lt;code&gt;ptr VSMap&lt;/code&gt;. This allows chaining functions.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;proc &lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;myfilter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;vsmap&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;ptr&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;VSMap&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;w&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;h&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;):&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;ptr&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;VSMap&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;
+                    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;^^^^^^^^^&lt;/span&gt;                &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;^^^^^^^^^&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;We can improve the readability by calling the filter with &lt;code&gt;(w=320,h=200)&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-nim&#34; data-lang=&#34;nim&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;Source&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;video.mkv&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;myfilter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;w&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;320&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;h&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Pipey4m&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;some-notes-on-nim&#34;&gt;Some notes on Nim&lt;/h2&gt;
+&lt;p&gt;Nim is typed. So you can avoid some erros by taking advance of it. For example, you could define &lt;code&gt;myfilter&lt;/code&gt; to take &lt;code&gt;Natural&lt;/code&gt; (which includes only integers equal or greater than 0) instead of &lt;code&gt;int&lt;/code&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
